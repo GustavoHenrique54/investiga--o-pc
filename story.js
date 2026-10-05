@@ -34,7 +34,7 @@ const STORY_DATA = {
   "intro": {
     badge: "🚨 CÓDIGO VERMELHO",
     title: "Primeiro Dia de Estágio...",
-    icon: "😱",
+    icon: "panic",
     text: `Você é o <b>Juninho</b>, novo estagiário de TI.<br><br>
     Tentando abrir espaço no HD para baixar um joguinho, você selecionou sem querer a pasta sagrada: 
     <code class="code-highlight">C:\\DADOS_CONFIDENCIAIS_DA_EMPRESA_2026</code> e mandou direto pra <b>Lixeira</b>!<br><br>
@@ -78,7 +78,7 @@ const STORY_DATA = {
   "fase1_energia": {
     badge: "Etapa 1 de 5 • Alimentação Elétrica",
     title: "O PC Nem Dá Sinal de Vida!",
-    icon: "🔌",
+    icon: "plug",
     text: `Você aperta o botão <b>Power</b> do gabinete e... <b>NADA</b>! Nem led, nem barulho de ventoinha, silêncio absoluto.<br><br>
     Como bom profissional de manutenção de computadores, qual é a primeira coisa que você deve checar?`,
     pcStatus: {
@@ -123,7 +123,7 @@ const STORY_DATA = {
   "fase1_energia_retry": {
     badge: "Etapa 1 de 5 • Dica de Manutenção",
     title: "O Computador Ainda Tá Sem Energia!",
-    icon: "💡",
+    icon: "lightbulb",
     text: `Calma, Juninho! Lembre-se da regra de ouro da informática:<br><br>
     <b>Antes de qualquer diagnóstico avançado, verifique o básico: a energia está chegando na máquina?</b>`,
     pcStatus: {
@@ -157,7 +157,7 @@ const STORY_DATA = {
   "fase2_ram": {
     badge: "Etapa 2 de 5 • POST & Memória",
     title: "BEEP! BEEP! BEEP! Sem Vídeo!",
-    icon: "📟",
+    icon: "beep",
     text: `A fonte ligou! Mas a tela continua preta e o gabinete começa a gritar:<br><br>
     <div class="audio-box">🔊 *BEEP... BEEP... BEEP...* (três bipes contínuos)</div><br>
     Você se lembra das aulas de manutenção: o POST da placa-mãe está avisando um erro de hardware clássico. O que fazer?`,
@@ -203,7 +203,7 @@ const STORY_DATA = {
   "fase2_ram_retry": {
     badge: "Etapa 2 de 5 • Dica de Manutenção",
     title: "Aquele Bipe É Inconfundível...",
-    icon: "🧠",
+    icon: "ram",
     text: `Bipes repetitivos na inicialização sem imagem na tela são o clássico sinal de <b>mau contato na Memória RAM</b>.<br><br>
     O que você precisa fazer agora com o computador desligado?`,
     pcStatus: {
@@ -237,7 +237,7 @@ const STORY_DATA = {
   "fase3_disco": {
     badge: "Etapa 3 de 5 • Armazenamento & Boot",
     title: "Tela Preta: 'No Bootable Device Found'",
-    icon: "💾",
+    icon: "disk",
     text: `O monitor deu vídeo! Mas logo em seguida trava em letras brancas:<br><br>
     <code class="code-error">ERROR: No Bootable Device Found. Insert boot media and press any key...</code><br><br>
     A placa-mãe não está encontrando o SSD/HD com o sistema operacional. Ao olhar dentro da lateral aberta, o que você faz?`,
@@ -283,7 +283,7 @@ const STORY_DATA = {
   "fase3_disco_retry": {
     badge: "Etapa 3 de 5 • Dica de Manutenção",
     title: "Sem Disco de Inicialização!",
-    icon: "🔍",
+    icon: "search",
     text: `Se o computador diz <b>"No Bootable Device"</b>, significa que a placa não está conseguindo ler o disco rígido ou SSD.<br><br>
     Conecte os cabos do disco para o sistema poder iniciar!`,
     pcStatus: {
@@ -317,7 +317,7 @@ const STORY_DATA = {
   "fase4_refrigeracao": {
     badge: "Etapa 4 de 5 • Refrigeração Térmica",
     title: "Ventoinha Parecendo Uma Turbina de Avião!",
-    icon: "🔥",
+    icon: "flame",
     text: `O logotipo do Windows começou a carregar! Mas de repente a ventoinha do processador gira em 100%, faz um barulho ensurdecedor de <b>VVVRRRUUUUUM</b> e a tela pisca:<br><br>
     <code class="code-warning">WARNING: CPU Overheating! Thermal Throttling Active! (98°C)</code><br><br>
     Se esquentar mais 2 graus, o PC vai desligar de emergência para não queimar o processador! O que está acontecendo?`,
@@ -363,7 +363,7 @@ const STORY_DATA = {
   "fase4_refrigeracao_retry": {
     badge: "Etapa 4 de 5 • Dica de Manutenção",
     title: "Alívio Térmico Urgente!",
-    icon: "❄️",
+    icon: "cooler",
     text: `O processador precisa de <b>fluxo de ar</b> e ventilação livre para dissipar o calor!<br><br>
     Libere a circulação de ar do gabinete imediatamente!`,
     pcStatus: {
@@ -397,7 +397,7 @@ const STORY_DATA = {
   "fase5_recuperacao": {
     badge: "Etapa 5 de 5 • O Minuto Final",
     title: "Área de Trabalho Aberta! Falta Pouco!",
-    icon: "💻",
+    icon: "system",
     text: `*TCHAN-RAM!* O som de inicialização toca e a área de trabalho do Windows se abre na sua frente!<br><br>
     O relógio do expurgo automático da lixeira está piscando na barra de tarefas! Faltam segundos para a limpeza definitiva dos dados confidenciais!<br><br>
     <b>Qual é a sua ação imediata?</b>`,
@@ -443,7 +443,7 @@ const STORY_DATA = {
   "fase5_recuperacao_retry": {
     badge: "Etapa 5 de 5 • Última Chance",
     title: "Restaurar é a Palavra Mágica!",
-    icon: "🗑️",
+    icon: "trash",
     text: `A pasta ainda está na Lixeira esperando o comando certo!<br><br>
     Não invente moda: clique com o botão direito e <b>restaure os dados</b>!`,
     pcStatus: {
@@ -470,7 +470,7 @@ const STORY_DATA = {
   "vitoria": {
     badge: "🏆 MISSÃO CUMPRIDA!",
     title: "Você Salvou a Empresa!",
-    icon: "🎉",
+    icon: "party",
     text: `A porta da sala de TI se abre. É o chefe entrando com uma caneca de café na mão:<br><br>
     <i>— "E aí, Juninho! Ouvi uns barulhos estranhos aqui... tá tudo em ordem com o servidor?"</i><br><br>
     Você olha para o monitor: os dados confidenciais estão intactos no lugar, o PC tá rodando lisinho e a lixeira está vazia por vontade própria.<br><br>
@@ -499,7 +499,7 @@ const STORY_DATA = {
   "game_over_tempo": {
     badge: "⏰ O TEMPO ACABOU!",
     title: "A Lixeira Foi Esvaziada...",
-    icon: "💥",
+    icon: "boom",
     text: `<b>00:00</b> no cronômetro!<br><br>
     O script automático rodou e apagou todos os dados de forma permanente.<br><br>
     Nesse exato momento, o chefe e a equipe inteira entram na sala segurando relatórios vazios.<br><br>

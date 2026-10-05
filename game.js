@@ -47,15 +47,17 @@ class GameEngine {
   initEvents() {
     // Botão de Áudio (Mudo / Desmudo)
     if (this.muteBtn) {
+      this.muteBtn.innerHTML = window.ComicIcons.get("volume");
       this.muteBtn.addEventListener("click", () => {
         const isMuted = window.soundEffects.toggleMute();
-        this.muteBtn.textContent = isMuted ? "🔇" : "🔊";
+        this.muteBtn.innerHTML = window.ComicIcons.get(isMuted ? "mute" : "volume");
         this.muteBtn.title = isMuted ? "Ativar Som" : "Silenciar";
       });
     }
 
     // Botão de Reiniciar
     if (this.restartBtn) {
+      this.restartBtn.innerHTML = window.ComicIcons.get("restart");
       this.restartBtn.addEventListener("click", () => {
         window.soundEffects.playClick();
         if (confirm("Deseja reiniciar a história desde o começo?")) {
@@ -167,11 +169,17 @@ class GameEngine {
     void this.mainCard.offsetWidth; // Força reflow
     this.mainCard.classList.add("fade-in");
 
-    // Atualiza cabeçalho do card
-    this.sceneBadge.textContent = scene.badge || "Etapa";
-    this.sceneIcon.textContent = scene.icon || "💻";
+    // Atualiza cabeçalho do card com suporte a ComicIcons
+    this.sceneBadge.innerHTML = window.ComicIcons.replaceEmojis(scene.badge || "Etapa");
+    
+    // Ícone da cena em estilo de história em quadrinhos
+    const iconKey = window.ComicIcons.emojiMap[scene.icon] || scene.icon || "system";
+    this.sceneIcon.innerHTML = window.ComicIcons.icons[iconKey] 
+      ? window.ComicIcons.get(iconKey) 
+      : window.ComicIcons.replaceEmojis(scene.icon || "");
+
     this.sceneTitle.textContent = scene.title || "";
-    this.sceneText.innerHTML = scene.text || "";
+    this.sceneText.innerHTML = window.ComicIcons.replaceEmojis(scene.text || "");
 
     // Atualiza status do hardware
     this.updateHardwareDashboard(scene.pcStatus);
@@ -210,7 +218,7 @@ class GameEngine {
     options.forEach((option) => {
       const btn = document.createElement("button");
       btn.className = "option-btn";
-      btn.innerHTML = option.text;
+      btn.innerHTML = window.ComicIcons.replaceEmojis(option.text);
 
       btn.addEventListener("click", () => {
         this.handleOptionSelection(option, btn);
@@ -253,19 +261,21 @@ class GameEngine {
   }
 
   showFeedbackModal(option) {
-    this.feedbackIcon.textContent = option.isCorrect ? "✅" : "⚠️";
+    this.feedbackIcon.innerHTML = window.ComicIcons.get(option.isCorrect ? "check" : "warning");
     this.feedbackTitle.textContent = option.isCorrect ? "Boa Escolha!" : "Ops, Deu Ruim!";
     this.feedbackTitle.className = "feedback-title " + (option.isCorrect ? "correct" : "wrong");
-    this.feedbackMessage.textContent = option.feedback;
+    this.feedbackMessage.innerHTML = window.ComicIcons.replaceEmojis(option.feedback);
 
     if (option.timePenalty && option.timePenalty > 0) {
-      this.feedbackPenalty.textContent = `⏳ Penalidade de Tempo: -${option.timePenalty}s`;
-      this.feedbackPenalty.style.display = "inline-block";
+      this.feedbackPenalty.innerHTML = `${window.ComicIcons.get("hourglass")} Penalidade de Tempo: -${option.timePenalty}s`;
+      this.feedbackPenalty.style.display = "inline-flex";
     } else {
       this.feedbackPenalty.style.display = "none";
     }
 
-    this.feedbackContinueBtn.textContent = option.isCorrect ? "Continuar Avançando ➔" : "Tentar de Novo ↩";
+    this.feedbackContinueBtn.innerHTML = option.isCorrect 
+      ? `Continuar Avançando ${window.ComicIcons.get("arrow")}` 
+      : `Tentar de Novo ${window.ComicIcons.get("restart")}`;
     this.feedbackOverlay.classList.add("active");
   }
 
