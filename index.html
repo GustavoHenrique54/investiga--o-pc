@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Socorro, Apaguei a Firma! - Gibi Interativo de TI</title>
+  <meta name="description" content="Um jogo em quadrinhos interativo de comédia e manutenção de computadores com 5 minutos de corrida contra o tempo!">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas para confetes de gibi na vitória -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="app-container">
+    <!-- BARRA SUPERIOR: ESTILO CABEÇALHO DE GIBI -->
+    <header class="top-bar">
+      <div class="brand-title">
+        <span class="brand-name">⚡ SALVE O ESTAGIÁRIO!</span>
+        <span class="brand-badge">Manutenção de Computadores • HQ Interativa</span>
+      </div>
+      <div class="controls-group">
+        <button id="btn-mute" class="icon-btn" title="Silenciar / Ativar Som">🔊</button>
+        <button id="btn-restart" class="icon-btn" title="Reiniciar do Começo">🔄</button>
+      </div>
+    </header>
+
+    <!-- SEÇÃO DA BOMBA-RELÓGIO / CRONÔMETRO -->
+    <section class="timer-section" aria-label="Tempo Restante">
+      <div class="timer-label-box">
+        <span class="timer-label">💣 CONTAGEM REGRESSIVA</span>
+        <span class="timer-sublabel">Até o expurgo da lixeira!</span>
+      </div>
+      <div id="timer-display" class="timer-display">05:00</div>
+    </section>
+
+    <!-- PRANCHETA DE ADESIVOS DE HARDWARE -->
+    <section class="hardware-dashboard" aria-label="Status do Computador">
+      <div class="hardware-title">
+        <span>🔧 STATUS DO COMPUTADOR</span>
+        <span id="hw-overall-status">Hardware Check</span>
+      </div>
+      <div class="hardware-indicators">
+        <div id="hw-power" class="hw-item offline" title="Alimentação Elétrica">
+          <span class="hw-icon">⚡</span>
+          <span class="hw-name">Energia</span>
+          <span class="hw-dot"></span>
+        </div>
+        <div id="hw-ram" class="hw-item desconhecido" title="Memória RAM">
+          <span class="hw-icon">🧠</span>
+          <span class="hw-name">RAM</span>
+          <span class="hw-dot"></span>
+        </div>
+        <div id="hw-disk" class="hw-item desconhecido" title="Armazenamento SSD/HD">
+          <span class="hw-icon">💾</span>
+          <span class="hw-name">Disco</span>
+          <span class="hw-dot"></span>
+        </div>
+        <div id="hw-cooler" class="hw-item desconhecido" title="Refrigeração / Cooler">
+          <span class="hw-icon">❄️</span>
+          <span class="hw-name">Cooler</span>
+          <span class="hw-dot"></span>
+        </div>
+        <div id="hw-system" class="hw-item offline" title="Sistema Operacional">
+          <span class="hw-icon">💻</span>
+          <span class="hw-name">Sistema</span>
+          <span class="hw-dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUADRO PRINCIPAL DE HISTÓRIA EM QUADRINHOS -->
+    <main id="main-card" class="main-card fade-in">
+      <div id="scene-badge" class="card-header-badge">🚨 Código Vermelho!</div>
+      
+      <div class="card-title-row">
+        <div id="scene-icon" class="card-icon">😱</div>
+        <h1 id="scene-title" class="card-title">Carregando quadrinho...</h1>
+      </div>
+
+      <div id="scene-text" class="card-narrative">
+        Preparando os equipamentos do laboratório...
+      </div>
+
+      <!-- BALÕES DE ESCOLHA / BOTÕES DE DECISÃO -->
+      <div id="options-container" class="options-container">
+        <!-- Injetado dinamicamente pelo story.js -->
+      </div>
+    </main>
+
+    <!-- RODAPÉ ESTILO CRÉDITOS DE GIBI -->
+    <footer class="app-footer">
+      Trabalho Artístico da Turma de <span>Manutenção de Computadores</span>
+    </footer>
+  </div>
+
+  <!-- BALÃO DE FEEDBACK POP-UP (COMIC POP-UP) -->
+  <div id="feedback-overlay" class="feedback-modal-overlay">
+    <div class="feedback-modal-card">
+      <div id="feedback-icon" class="feedback-icon">💡</div>
+      <h2 id="feedback-title" class="feedback-title">Dica Técnica!</h2>
+      <p id="feedback-message" class="feedback-message">Mensagem de reação aqui.</p>
+      <div id="feedback-penalty" class="feedback-penalty">⏳ Penalidade: -15s</div>
+      <button id="feedback-continue-btn" class="feedback-continue-btn">Continuar ➔</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="story.js"></script>
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
