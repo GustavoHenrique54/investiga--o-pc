@@ -17,7 +17,7 @@
 
 const GAME_CONFIG = {
   // Tempo total do jogo em segundos (300 segundos = 5 minutos)
-  initialTimeSeconds: 300,
+  initialTimeSeconds: 240,
 
   // Nome do estagiário / protagonista
   characterName: "Juninho",
